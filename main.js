@@ -63,10 +63,9 @@ function gotResult(error, results) {
             document.getElementById("update_gesture").innerHTML = "&#129311;"+"I love you";
         }
 
-
-function speak() {
-    var synth = window.speechSynthesis;
-    speak_data_1 = "The first prediction is " + prediction;
-    var utterThis = new SpeechSynthesisUtterance_(speak_data);
-    synth.speak(utterThis);
-}
+        function speak() 
+        {   var synth = window.speechSynthesis;
+            speak_data_1 = "The first prediction is" + prediction;
+            var utterThis = new SpeechSynthesisUtterance_(speak_data);
+            synth.speak(utterThis);
+        }
