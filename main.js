@@ -35,13 +35,11 @@ function gotResult(error, results) {
         console.error(error);
     } else {
         console.log(results);
-        document.getElementById("result_gesture_name").innerHTML = results[0].label;
-        prediction = results[0].label;
+        document.getElementById("result_emotion_name").innerHTML = results[0].label;
+        document.getElementById("result_emotion_name2").innerHTML = results[1].label;
+        prediction_1 = results[0].label;
+        prediction_2 = results[1].label;
         speak();
-        if(results[0].label == "Raised Hand")
-        {
-            document.getElementById("update_gesture").innerHTML = "&#9995;"+"Silence or Can I say something";
-        }
         if(results[0].label == "Vulcan Salute")
         {
             document.getElementById("update_gesture").innerHTML = "&#128406;"+"Live long and prosper, friends";
@@ -50,19 +48,16 @@ function gotResult(error, results) {
         {
             document.getElementById("update_gesture").innerHTML = "&#128076;"+"Ok no problem";
         }
-        if(results[0].label == "Victory")
+        if(results[0].label == "Love-You")
         {
-            document.getElementById("update_gesture").innerHTML = "&#9996;"+"This is a great victory";
+            document.getElementById("update_gesture").innerHTML = "&#129311;"+"I love you";s
         }
         if(results[0].label == "Crossed Fingers")
         {
             document.getElementById("update_gesture").innerHTML = "&#129310;"+"Wishing for something";
         }
-        if(results[0].label == "Love-You Gesture")
-        {
-            document.getElementById("update_gesture").innerHTML = "&#129311;"+"I love you";
-        }
-
+    }  
+        
         function speak() 
         {   var synth = window.speechSynthesis;
             speak_data_1 = "The first prediction is" + prediction;
